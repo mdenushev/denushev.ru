@@ -25,7 +25,7 @@ jobs:
           node-version: '14.x'
 
       - name: Ping server
-        run: ssh max@185.130.82.148 "touch ~/temp"
+        run: ssh -o StrictHostKeyChecking=no max@185.130.82.148 "touch ~/temp"
 
       - name: Install npm dependencies
         run: npm ci
