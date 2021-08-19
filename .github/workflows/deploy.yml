@@ -25,7 +25,7 @@ jobs:
           node-version: '14.x'
 
       - name: Ping server
-        run: telnet 185.130.82.148 22
+        run: ping 185.130.82.148
 
       - name: Install npm dependencies
         run: npm ci
