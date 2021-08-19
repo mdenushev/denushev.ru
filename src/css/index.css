@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+}
+
+.greeting {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: normal;
+}
+
+.social-networks {
+    /* Position */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 0;
+    margin-bottom: 20px;
+
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+}
+
+a {
+    color: #0a58ca;
+}
+
+.theme-switcher {
+    position: absolute;
+    right: 0;
+    margin-right: 20px;
+    margin-top: 10px;
+
+    border: none;
+    background: none;
+}
