@@ -16,7 +16,7 @@ jobs:
           chmod -R go= ~/.ssh
           chmod 600 ~/.ssh/id_rsa
           echo "${{ secrets.SERVER_SSH_KEY }}" >> ~/.ssh/id_rsa
-          apt install rsync
+          apt-get install rsync
 
       - uses: actions/checkout@v1
       - name: Install Node.js
