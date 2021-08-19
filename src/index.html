@@ -4,15 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Max Denushev</title>
-    <link rel="stylesheet" href="css/index.css">
-    <script src="scripts/index.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            color: #fff;
+            background-color: #000;
+        }
+
+        .greeting {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: normal;
+        }
+
+        .social-networks {
+            /* Position */
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-left: 0;
+            margin-bottom: 20px;
+
+            list-style-type: none;
+            display: flex;
+        }
+
+        .social-networks li:not(:first-child) {
+            margin-left: 1rem;
+        }
+
+        a {
+            color: #fff;
+
+        }
+
+    </style>
 </head>
 <body>
     <h1 class="greeting">Hi! 👋</h1>
     <ul aria-label="Social network list" class="social-networks">
         <li aria-label="Telegram link"><a href="https://t.me/denushev">Telegram</a></li>
-        <li aria-label="Github link"><a href="https://github.com/denushev">Github</a></li>
+        <li aria-label="Github link"><a href="https://github.com/mdenushev">Github</a></li>
     </ul>
-    <button class="theme-switcher" name="theme-switcher">Toggle theme</button>
 </body>
 </html>
