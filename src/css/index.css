@@ -21,7 +21,10 @@ body {
 
     list-style-type: none;
     display: flex;
-    gap: 1rem;
+}
+
+.social-networks li:not(:first-child) {
+    margin-left: 1rem;
 }
 
 a {
@@ -36,4 +39,5 @@ a {
 
     border: none;
     background: none;
+    font-size: 1em;
 }

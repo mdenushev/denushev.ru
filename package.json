@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "html": "html-minifier --remove-comments --collapse-whitespace --input-dir src --output-dir dist --file-ext html",
+    "html": "html-minifier --remove-comments --collapse-whitespace --output dist/index.html src/index.html",
     "css": "cleancss src/css/index.css -o dist/css/index.css && cleancss src/css/dark.css -o dist/css/dark.css",
     "js": "mkdir -p dist/scripts && terser src/scripts/index.js -c -m --output dist/scripts/index.js",
     "build": "npm run html && npm run js && npm run css"
