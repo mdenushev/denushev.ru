@@ -9,17 +9,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Environment preparation
-        run: |
-          mkdir -p ~/.ssh/
-          touch ~/.ssh/id_rsa
-          chmod -R go= ~/.ssh
-          chmod 600 ~/.ssh/id_rsa
-          echo "${{ secrets.SERVER_SSH_KEY }}" >> ~/.ssh/id_rsa
-
-      - name: Test ssh connection
-        run: ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} "touch ~/temp"
-
       - uses: actions/checkout@v1
       - name: Install Node.js
         uses: actions/setup-node@v1
