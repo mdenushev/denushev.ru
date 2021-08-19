@@ -24,9 +24,6 @@ jobs:
         with:
           node-version: '14.x'
 
-      - name: Ping server
-        run: ping -c 10 185.130.82.148
-
       - name: Install npm dependencies
         run: npm ci
 
@@ -34,7 +31,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to server
-        run: rsync -e "ssh -o StrictHostKeyChecking=no" -avz dist/* max@185.130.82.148:/var/www/denushev.ru/html
+        run: sudo rsync -e "ssh -o StrictHostKeyChecking=no" -avz dist/* max@185.130.82.148:/var/www/denushev.ru/html
 
 #      - name: Deploy to Server
 #        uses: easingthemes/ssh-deploy@v2.1.4
