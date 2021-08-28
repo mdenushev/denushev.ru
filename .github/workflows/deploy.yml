@@ -9,20 +9,7 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - name: Environment preparation
-        run: |
-          mkdir -p ~/.ssh/
-          touch ~/.ssh/id_rsa
-          chmod -R go= ~/.ssh
-          chmod 600 ~/.ssh/id_rsa
-          echo "${{ secrets.SERVER_SSH_KEY }}" >> ~/.ssh/id_rsa
-          sudo apt-get install -y rsync
-
       - uses: actions/checkout@v2
-      - name: Install Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.x'
 
       - name: Install npm dependencies
         run: npm ci
@@ -31,14 +18,4 @@ jobs:
         run: npm run build
 
       - name: Deploy to server
-        run: sudo rsync -e "ssh -o StrictHostKeyChecking=no" -avz dist/* max@185.130.82.148:/var/www/denushev.ru/html
-
-#      - name: Deploy to Server
-#        uses: easingthemes/ssh-deploy@v2.1.4
-#        env:
-#          SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-#          ARGS: "-rltgoDzvO --delete"
-#          SOURCE: "dist/"
-#          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-#          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-#          TARGET: ${{ secrets.REMOTE_TARGET }}
+        run: cp -R dist/* ${{ secrets.REMOTE_TARGET }}
