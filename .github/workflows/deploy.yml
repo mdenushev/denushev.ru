@@ -17,5 +17,8 @@ jobs:
       - name: Run build task
         run: npm run build
 
-      - name: Deploy to server
+      - name: Debug
+        run: whoami & pwd
+
+      - name: Copy to server dir
         run: cp -R dist/* ${{ secrets.REMOTE_TARGET }}
